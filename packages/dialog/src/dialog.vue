@@ -1,21 +1,23 @@
 <template>
-    <div class="clu-dialog-container" v-if="visible" @click.self="handelCancel">
-        <div class="clu-dailog">
-            <div class="clu-dailog__header">
-                <slot name="title">
-                    <span class="clu-dailog__title">{{title}}</span>
-                </slot>
-                <clu-icon class="clu-dailog__headerbtn" type="guanbi" @click.native="handelCancel" />
-            </div>
-            <div class="clu-dailog__body">
-                <span>一段信息</span>
-            </div>
-            <div class="clu-dailog__footer">
-                <clu-button @click="handelCancel">取消</clu-button>
-                <clu-button type="primary">确定</clu-button>
+    <transition name="fade">
+        <div class="clu-dialog-container" v-if="visible" @click.self="handelCancel">
+            <div class="clu-dailog">
+                <div class="clu-dailog__header">
+                    <slot name="title">
+                        <span class="clu-dailog__title">{{title}}</span>
+                    </slot>
+                    <clu-icon class="clu-dailog__headerbtn" type="guanbi" @click.native="handelCancel" />
+                </div>
+                <div class="clu-dailog__body">
+                    <span>一段信息</span>
+                </div>
+                <div class="clu-dailog__footer">
+                    <clu-button @click="handelCancel">取消</clu-button>
+                    <clu-button type="primary">确定</clu-button>
+                </div>
             </div>
         </div>
-    </div>
+    </transition>
 </template>
 
 <script>
@@ -75,6 +77,14 @@ export default {
                 }
             }
         }
+    }
+
+    .fade-enter-active, .fade-leave-active {
+        transition: all .5s;
+    }
+    .fade-enter, .fade-leave-to {
+        opacity: 0;
+        transform: translateY(-20px);
     }
 
 </style>
