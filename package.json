@@ -1,6 +1,6 @@
 {
   "name": "clustar-ui",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": false,
   "main": "dist/clustar-ui.umd.min.js",
   "scripts": {
