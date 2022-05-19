@@ -1,5 +1,14 @@
 <template>
-    <button class="clu-button-container" :class="`clu-button--${type}`">
+    <button
+        class="clu-button-container"
+        :class="[
+            `clu-button--${type}`,
+            {
+                'is-round': round
+            }
+        ]"
+        @click="handleClick"
+    >
         <slot>按钮</slot>
     </button>
 </template>
@@ -11,6 +20,15 @@ export default {
         type: {
             type: String,
             default: 'default',
+        },
+        round: {
+            type: Boolean,
+            default: false,
+        },
+    },
+    methods: {
+        handleClick (e) {
+            this.$emit('click', e)
         },
     },
 
@@ -54,6 +72,9 @@ export default {
         color: #fff;
         background-color: #909399;
         border-color: #909399;
+    }
+    .is-round {
+        border-radius: 20px;
     }
 
 </style>
