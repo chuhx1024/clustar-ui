@@ -11,6 +11,7 @@ Vue.config.productionTip = false
 
 // Vue.use(CluButton)
 // Vue.use(CluIcon)
+console.log(CluUI)
 Vue.use(CluUI)
 
 new Vue({

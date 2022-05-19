@@ -1,24 +1,26 @@
 # clustar-ui
 
-## Project setup
-```
-npm install
+> A Vue.js 2.0 UI Toolkit for Web.
+
+## Install
+```shell
+npm install clustar-ui -S
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Quick Start
+``` javascript
+import Vue from 'vue'
+import Clustar from 'clustar-ui'
 
-### Compiles and minifies for production
-```
-npm run build
-```
+Vue.use(Clustar)
 
-### Lints and fixes files
-```
-npm run lint
-```
+// or
+import {
+  Select,
+  Button
+  // ...
+} from 'clustar-ui'
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Vue.component(Select.name, Select)
+Vue.component(Button.name, Button)
+```

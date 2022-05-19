@@ -18,7 +18,7 @@ const install = (Vue) => {
 
 // vue 插件机制  导出一个对象的话  这个对象要有一个 install 方法
 export default {
-    version: '0.0.1',
+    version: require('../package.json').version,
     install,
     Button,
     Icon,
