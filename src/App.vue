@@ -12,12 +12,23 @@
             <clu-button round type="success">成功按钮</clu-button>
             <clu-button round type="info">警告按钮</clu-button>
         </div>
+        <div class="row" style="width: 1000px">
+            <!-- <clu-icon/>
+            <clu-icon type="fanhui"/> -->
+            <div v-for="item in iconJson" :key="item.unicode" style="width: 150px; margin-bottom: 20px;">
+                <clu-icon :type="item.font_class"/>
+                <p>{{item.font_class}}</p>
+            </div>
+
+        </div>
         <div class="row">
-            <clu-icon/>
-            <clu-icon type="fanhui"/>
-
-            <clu-icon v-for="item in iconJson" :key="item.unicode" :type="item.font_class"/>
-
+            <!-- <clu-dialog :visible="true" title="我的提示"/> -->
+            <clu-button @click="visible=true">显示dailog</clu-button>
+            <clu-dialog :visible.sync="visible" >
+                <template v-slot:title>
+                    你好
+                </template>
+            </clu-dialog >
         </div>
     </div>
 </template>
@@ -26,6 +37,7 @@ export default {
     data () {
         return {
             iconJson: require('../packages/icon/src/resource/iconfont.json').glyphs,
+            visible: false,
         }
     },
     methods: {

@@ -1,9 +1,12 @@
 import Button from './button/index.js'
 import Icon from './icon/index.js'
+import Dialog from './dialog/index.js'
 
 const components = [
     Button,
     Icon,
+    Dialog,
+
 ]
 
 const install = (Vue) => {
@@ -22,4 +25,5 @@ export default {
     install,
     Button,
     Icon,
+    Dialog,
 }
