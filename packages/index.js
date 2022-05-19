@@ -1,11 +1,13 @@
 import Button from './button/index.js'
 import Icon from './icon/index.js'
 import Dialog from './dialog/index.js'
+import Input from './input/index.js'
 
 const components = [
     Button,
     Icon,
     Dialog,
+    Input,
 
 ]
 
@@ -26,4 +28,5 @@ export default {
     Button,
     Icon,
     Dialog,
+    Input,
 }

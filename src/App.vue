@@ -1,6 +1,9 @@
 <template>
     <div id="app">
         <div class="row">
+            <clu-input v-model="inputData" placeholder='请输入' />
+        </div>
+        <div class="row">
             <clu-button @click="fn">默认按钮</clu-button>
             <clu-button type="primary">默认按钮</clu-button>
             <clu-button type="success">成功按钮</clu-button>
@@ -30,6 +33,7 @@
                 </template>
             </clu-dialog >
         </div>
+
     </div>
 </template>
 <script>
@@ -38,6 +42,7 @@ export default {
         return {
             iconJson: require('../packages/icon/src/resource/iconfont.json').glyphs,
             visible: false,
+            inputData: 123,
         }
     },
     methods: {
