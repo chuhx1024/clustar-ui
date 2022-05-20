@@ -1,17 +1,12 @@
 <template>
     <div class="clu-input-container">
-        <input v-bind="$attrs"  @input="handelInput" type="text" class="clu-input__inner">
+        <input v-bind="$attrs"  @input="handelInput" class="clu-input__inner">
     </div>
 </template>
 
 <script>
 export default {
     name: 'CluInput',
-    data () {
-        return {
-            data: '',
-        }
-    },
     methods: {
         handelInput (e) {
             this.$emit('input', e.target.value)

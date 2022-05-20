@@ -1,6 +1,7 @@
 <template>
     <div id="app">
         <div class="row">
+            <clu-input v-model="inputData" type="password" placeholder='请输入' />
             <clu-input v-model="inputData" placeholder='请输入' />
         </div>
         <div class="row">
