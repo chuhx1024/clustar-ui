@@ -38,10 +38,11 @@
     </div>
 </template>
 <script>
+import { glyphs } from '../packages/icon/src/resource/iconfont.json'
 export default {
     data () {
         return {
-            iconJson: require('../packages/icon/src/resource/iconfont.json').glyphs,
+            iconJson: glyphs,
             visible: false,
             inputData: 123,
         }
