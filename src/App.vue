@@ -1,8 +1,8 @@
 <template>
     <div id="app">
         <div class="row">
-            <clu-input v-model="inputData" type="password" placeholder='请输入' />
-            <clu-input v-model="inputData" placeholder='请输入' />
+            <clu-input style="width: 20%" v-model="inputData" type="password" placeholder='请输入' />
+            <clu-input style="width: 20%" v-model="inputData" placeholder='请输入' />
         </div>
         <div class="row">
             <clu-button @click="fn">默认按钮</clu-button>
