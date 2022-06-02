@@ -4,12 +4,14 @@ import Button from './button/index.js'
 import Icon from './icon/index.js'
 import Dialog from './dialog/index.js'
 import Input from './input/index.js'
+import Switch from './switch/index.js'
 
 const components = [
     Button,
     Icon,
     Dialog,
     Input,
+    Switch,
 
 ]
 
@@ -32,4 +34,5 @@ export default {
     Icon,
     Dialog,
     Input,
+    Switch,
 }

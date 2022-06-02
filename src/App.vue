@@ -1,6 +1,9 @@
 <template>
     <div id="app">
         <div class="row">
+            <clu-switch v-model="switchData" />
+        </div>
+        <div class="row">
             <clu-input style="width: 20%" v-model="inputData" type="password" placeholder='请输入' />
             <clu-input style="width: 20%" v-model="inputData" placeholder='请输入' />
         </div>
@@ -45,6 +48,7 @@ export default {
             iconJson: glyphs,
             visible: false,
             inputData: 123,
+            switchData: false,
         }
     },
     methods: {
