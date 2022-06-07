@@ -5,14 +5,18 @@ if (!process.argv[2]) {
     process.exit(1)
 }
 
-const ComponentName = process.argv[2]
+const uppercamelcase = require('uppercamelcase')
+
+const componentname = process.argv[2]
+// 转换大驼峰
+const ComponentName = 'Clu' + uppercamelcase(componentname)
 
 const fileSave = require('file-save')
 
 const File = [
     {
-        filename: `/packages/${ComponentName}/index.js`,
-        content: `import ${ComponentName} from './src/${ComponentName}.vue'
+        filename: `/packages/${componentname}/index.js`,
+        content: `import ${ComponentName} from './src/${componentname}.vue'
 
 ${ComponentName}.install = (Vue) => {
     Vue.component(${ComponentName}.name, ${ComponentName})
@@ -21,10 +25,10 @@ ${ComponentName}.install = (Vue) => {
 export default ${ComponentName}`,
     },
     {
-        filename: `/packages/${ComponentName}/src/${ComponentName}.vue`,
+        filename: `/packages/${componentname}/src/${componentname}.vue`,
         content: `<template>
-    <div class="clu-city-container">
-        city
+    <div class="clu-${componentname}-container">
+        ${ComponentName}
     </div>
 </template>
 
@@ -36,7 +40,7 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-    .clu-city-container {
+    .clu-${componentname}-container {
         color: purple;
     }
 
