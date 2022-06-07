@@ -1,6 +1,12 @@
 <template>
     <div id="app">
         <div class="row">
+            <clu-checkbox label="0" v-model="checked">苹果</clu-checkbox>
+            <clu-checkbox label="1" v-model="checked">桃子</clu-checkbox>
+            <clu-checkbox label="2" v-model="checked">香蕉</clu-checkbox>
+            <clu-checkbox label="2" v-model="checked"></clu-checkbox>
+        </div>
+        <div class="row">
             <clu-radio-group v-model="radio" label="0">
                 <clu-radio label="0">男</clu-radio>
                 <clu-radio label="1">女</clu-radio>
@@ -62,6 +68,7 @@ export default {
             inputData: 123,
             switchData: false,
             radio: '0',
+            checked: true,
         }
     },
     methods: {

@@ -7,6 +7,7 @@ import Input from './input/index.js'
 import Switch from './switch/index.js'
 import Radio from './radio/index.js'
 import RadioGroup from './radio-group/index.js'
+import Checkbox from './checkbox/index.js'
 
 const components = [
     Button,
@@ -16,6 +17,7 @@ const components = [
     Switch,
     Radio,
     RadioGroup,
+    Checkbox,
 
 ]
 
@@ -41,4 +43,5 @@ export default {
     Switch,
     Radio,
     RadioGroup,
+    Checkbox,
 }
