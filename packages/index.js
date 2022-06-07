@@ -5,6 +5,7 @@ import Icon from './icon/index.js'
 import Dialog from './dialog/index.js'
 import Input from './input/index.js'
 import Switch from './switch/index.js'
+import Radio from './radio/index.js'
 
 const components = [
     Button,
@@ -12,6 +13,7 @@ const components = [
     Dialog,
     Input,
     Switch,
+    Radio,
 
 ]
 
@@ -35,4 +37,5 @@ export default {
     Dialog,
     Input,
     Switch,
+    Radio,
 }

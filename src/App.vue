@@ -1,6 +1,11 @@
 <template>
     <div id="app">
         <div class="row">
+            <clu-radio v-model="radio" label="0">男</clu-radio>
+            <clu-radio v-model="radio" label="1">女</clu-radio>
+            <clu-radio v-model="radio" label="2">保密</clu-radio>
+        </div>
+        <div class="row">
             <clu-switch v-model="switchData" />
         </div>
         <div class="row">
@@ -49,6 +54,7 @@ export default {
             visible: false,
             inputData: 123,
             switchData: false,
+            radio: '0',
         }
     },
     methods: {
