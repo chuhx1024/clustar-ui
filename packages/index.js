@@ -6,6 +6,7 @@ import Dialog from './dialog/index.js'
 import Input from './input/index.js'
 import Switch from './switch/index.js'
 import Radio from './radio/index.js'
+import RadioGroup from './radio-group/index.js'
 
 const components = [
     Button,
@@ -14,6 +15,7 @@ const components = [
     Input,
     Switch,
     Radio,
+    RadioGroup,
 
 ]
 
@@ -38,4 +40,5 @@ export default {
     Input,
     Switch,
     Radio,
+    RadioGroup,
 }

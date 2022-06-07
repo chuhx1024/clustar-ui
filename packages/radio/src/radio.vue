@@ -3,10 +3,10 @@
         <input
             class="clu-radio_input"
             type="radio"
-            :value="value"
+            :value="model"
             :checked="checked"
         >
-        <span :class="['clu-radio_inner', value === label ? 'is-checked' : '']"></span>
+        <span :class="['clu-radio_inner', model === label ? 'is-checked' : '']"></span>
         <span>
             <slot>{{label}}</slot>
         </span>
@@ -23,14 +23,35 @@ export default {
         },
         value: null,
     },
+    inject: ['radioGroup'],
     computed: {
         checked () {
             return this.value === this.label
         },
+        isGroup () {
+            return !!this.radioGroup
+        },
+        model: {
+            get () {
+                return this.isGroup ? this.radioGroup.value : this.value
+            },
+            set (val) {
+                if (this.isGroup) {
+                    this.radioGroup.$emit('input', val)
+                } else {
+                    this.$emit('input', val)
+                }
+            },
+        },
+    },
+    mounted () {
+        console.log(this.radioGroup, 1)
+        console.log(this.radioGroup.value, 2)
     },
     methods: {
         handleClick () {
-            this.$emit('input', this.label)
+            // this.$emit('input', this.label)
+            this.model = this.label
         },
     },
 

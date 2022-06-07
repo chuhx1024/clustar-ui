@@ -1,6 +1,13 @@
 <template>
     <div id="app">
         <div class="row">
+            <clu-radio-group v-model="radio" label="0">
+                <clu-radio label="0">男</clu-radio>
+                <clu-radio label="1">女</clu-radio>
+                <clu-radio label="2">保密</clu-radio>
+            </clu-radio-group>
+        </div>
+        <div class="row">
             <clu-radio v-model="radio" label="0">男</clu-radio>
             <clu-radio v-model="radio" label="1">女</clu-radio>
             <clu-radio v-model="radio" label="2">保密</clu-radio>
