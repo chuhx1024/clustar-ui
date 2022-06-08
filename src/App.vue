@@ -6,6 +6,14 @@
             <clu-test-props />
         </div>
         <div class="row">
+            <clu-checkbox-group v-model="checkeds">
+                <clu-checkbox label="0" >苹果</clu-checkbox>
+                <clu-checkbox label="1" >桃子</clu-checkbox>
+                <clu-checkbox label="2" >香蕉</clu-checkbox>
+                <clu-checkbox label="2" ></clu-checkbox>
+            </clu-checkbox-group>
+        </div>
+        <div class="row">
             <clu-checkbox label="0" v-model="checked">苹果</clu-checkbox>
             <clu-checkbox label="1" v-model="checked">桃子</clu-checkbox>
             <clu-checkbox label="2" v-model="checked">香蕉</clu-checkbox>
@@ -74,6 +82,7 @@ export default {
             switchData: false,
             radio: '0',
             checked: true,
+            checkeds: [],
         }
     },
     methods: {

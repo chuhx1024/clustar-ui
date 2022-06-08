@@ -8,6 +8,7 @@ import Switch from './switch/index.js'
 import Radio from './radio/index.js'
 import RadioGroup from './radio-group/index.js'
 import Checkbox from './checkbox/index.js'
+import CheckboxGroup from './checkbox-group/index.js'
 import TestProps from './test-props/index.js'
 
 const components = [
@@ -19,6 +20,7 @@ const components = [
     Radio,
     RadioGroup,
     Checkbox,
+    CheckboxGroup,
     TestProps,
 
 ]
@@ -46,5 +48,6 @@ export default {
     Radio,
     RadioGroup,
     Checkbox,
+    CheckboxGroup,
     TestProps,
 }

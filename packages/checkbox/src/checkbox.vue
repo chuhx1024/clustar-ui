@@ -1,11 +1,11 @@
 <template>
     <div class="clu-checkbox-container" @click="handelChange">
         <input
-            class="clu-radio_input"
+            class="clu-checkbox_input"
             type="checkbox"
-            :checked="value"
+            :checked="checked"
         >
-        <span :class="['clu-checkbox_inner', value === true ? 'is-checked' : '']"></span>
+        <span :class="['clu-checkbox_inner', checked ? 'is-checked' : '']"></span>
         <span>
             <slot>{{label}}</slot>
         </span>
@@ -22,9 +22,42 @@ export default {
             default: '',
         },
     },
+    inject: {
+        checkboxGroup: {
+            default: () => {},
+        },
+    },
+    computed: {
+        isGroup () {
+            return !!this.checkboxGroup
+        },
+        checked () {
+            return this.isGroup ? this.checkboxGroup.value.indexOf(this.label) !== -1 : this.value
+        },
+        // model: {
+        //     get () {
+        //         return this.isGroup ? this.radioGroup.value : this.value
+        //     },
+        //     set (val) {
+        //         if (this.isGroup) {
+        //             this.radioGroup.$emit('input', val)
+        //         } else {
+        //             this.$emit('input', val)
+        //         }
+        //     },
+        // },
+    },
     methods: {
         handelChange () {
-            this.$emit('input', !this.value)
+            if (this.isGroup) {
+                if (this.checked) {
+                    this.checkboxGroup.value = this.checkboxGroup.value.filter(item => item !== this.label)
+                } else {
+                    this.checkboxGroup.value.push(this.label)
+                }
+            } else {
+                this.$emit('input', !this.value)
+            }
         },
     },
 
@@ -33,6 +66,11 @@ export default {
 
 <style lang='scss' scoped>
     .clu-checkbox-container {
+        .clu-checkbox_input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
         .clu-checkbox_inner {
             display: inline-block;
             width: 14px;
