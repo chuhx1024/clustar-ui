@@ -1,5 +1,10 @@
 <template>
     <div id="app">
+
+        <h3>父子组件通信</h3>
+        <div class="row">
+            <clu-test-props />
+        </div>
         <div class="row">
             <clu-checkbox label="0" v-model="checked">苹果</clu-checkbox>
             <clu-checkbox label="1" v-model="checked">桃子</clu-checkbox>
