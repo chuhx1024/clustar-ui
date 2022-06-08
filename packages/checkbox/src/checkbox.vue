@@ -1,10 +1,11 @@
 <template>
-    <div class="clu-checkbox-container">
+    <div class="clu-checkbox-container" @click="handelChange">
         <input
             class="clu-radio_input"
             type="checkbox"
+            :checked="value"
         >
-        <span :class="['clu-checkbox_inner', 1 === 1 ? 'is-checked' : '']"></span>
+        <span :class="['clu-checkbox_inner', value === true ? 'is-checked' : '']"></span>
         <span>
             <slot>{{label}}</slot>
         </span>
@@ -15,9 +16,15 @@
 export default {
     name: 'CluCheckbox',
     props: {
+        value: null,
         label: {
             type: String,
             default: '',
+        },
+    },
+    methods: {
+        handelChange () {
+            this.$emit('input', !this.value)
         },
     },
 
