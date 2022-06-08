@@ -23,7 +23,12 @@ export default {
         },
         value: null,
     },
-    inject: ['radioGroup'],
+    // inject: ['radioGroup'],
+    inject: {
+        radioGroup: {
+            default: () => {},
+        },
+    },
     computed: {
         checked () {
             return this.value === this.label
@@ -43,10 +48,6 @@ export default {
                 }
             },
         },
-    },
-    mounted () {
-        console.log(this.radioGroup, 1)
-        console.log(this.radioGroup.value, 2)
     },
     methods: {
         handleClick () {
