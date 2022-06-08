@@ -1,6 +1,6 @@
 # clustar-ui
 
-> A Vue.js 2.0 UI Toolkit for Web.
+> A Vue.js 2.0 UI Toolkit for Web By Clustar.
 
 ## Install
 ```shell
