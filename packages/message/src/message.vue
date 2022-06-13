@@ -13,7 +13,9 @@ export default {
 
 <style lang='scss' scoped>
     .clu-message-container {
-        color: purple;
+        position: fixed;
+        top: 10px;
+        left: 50%;
     }
 
 </style>
