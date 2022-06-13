@@ -79,6 +79,7 @@ export default {
             border: 1px solid #ccc;
             border-radius: 2px;
             position: relative;
+            margin-right: 10px;
             &::after {
                 content: "";
                 border: 1px solid #fff;

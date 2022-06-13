@@ -1,5 +1,26 @@
 <template>
     <div id="app">
+        <div class="row">
+            <clu-form :model="formData">
+                <clu-form-item label="用户名">
+                    <clu-input placeholder="请输入" v-model="formData.name0"></clu-input>
+                </clu-form-item>
+                <clu-form-item label="性别">
+                    <clu-radio-group v-model="formData.gender">
+                        <clu-radio label="0">男</clu-radio>
+                        <clu-radio label="1">女</clu-radio>
+                        <clu-radio label="2">保密</clu-radio>
+                    </clu-radio-group>
+                </clu-form-item>
+                <clu-form-item label="爱好">
+                    <clu-checkbox-group v-model="formData.habby">
+                        <clu-checkbox label="0" >苹果</clu-checkbox>
+                        <clu-checkbox label="1" >桃子</clu-checkbox>
+                        <clu-checkbox label="2" >香蕉</clu-checkbox>
+                    </clu-checkbox-group>
+                </clu-form-item>
+            </clu-form>
+        </div>
 
         <h3>父子组件通信</h3>
         <div class="row">
@@ -36,7 +57,7 @@
         </div>
         <div class="row">
             <clu-input style="width: 20%" v-model="inputData" type="password" placeholder='请输入' />
-            <clu-input style="width: 20%" v-model="inputData" placeholder='请输入' />
+            <!-- <clu-input style="width: 20%" v-model="formData.name" placeholder='请输入' /> -->
         </div>
         <div class="row">
             <clu-button @click="fn">默认按钮</clu-button>
@@ -83,6 +104,11 @@ export default {
             radio: '0',
             checked: true,
             checkeds: [],
+            formData: {
+                name0: 'xiaoming',
+                gender: '0',
+                habby: [],
+            },
         }
     },
     methods: {

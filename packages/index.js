@@ -10,6 +10,8 @@ import RadioGroup from './radio-group/index.js'
 import Checkbox from './checkbox/index.js'
 import CheckboxGroup from './checkbox-group/index.js'
 import TestProps from './test-props/index.js'
+import Form from './form/index.js'
+import FormItem from './form-item/index.js'
 
 const components = [
     Button,
@@ -22,6 +24,8 @@ const components = [
     Checkbox,
     CheckboxGroup,
     TestProps,
+    Form,
+    FormItem,
 
 ]
 
@@ -50,4 +54,7 @@ export default {
     Checkbox,
     CheckboxGroup,
     TestProps,
+    Form,
+    FormItem,
+
 }
