@@ -12,6 +12,7 @@ import CheckboxGroup from './checkbox-group/index.js'
 import TestProps from './test-props/index.js'
 import Form from './form/index.js'
 import FormItem from './form-item/index.js'
+import Message from './message/index.js'
 
 const components = [
     Button,
@@ -33,6 +34,8 @@ const install = (Vue) => {
     components.forEach(component => {
         Vue.component(component.name, component)
     })
+
+    Vue.prototype.$message = Message
 }
 
 // if (typeof window !== 'undefined' && window.Vue) {
@@ -56,5 +59,6 @@ export default {
     TestProps,
     Form,
     FormItem,
+    Message,
 
 }

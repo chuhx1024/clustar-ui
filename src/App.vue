@@ -1,6 +1,11 @@
 <template>
     <div id="app">
         <div class="row">
+            <clu-button @click="handelMessage">
+                Message
+            </clu-button>
+        </div>
+        <div class="row">
             <clu-form :model="formData">
                 <clu-form-item label="用户名">
                     <clu-input placeholder="请输入" v-model="formData.name0"></clu-input>
@@ -114,6 +119,9 @@ export default {
     methods: {
         fn () {
             alert(1)
+        },
+        handelMessage () {
+            this.$message('这是一条消息提示')
         },
     },
 }
