@@ -2,7 +2,10 @@
     <div id="app">
         <div class="row">
             <clu-button @click="handelMessage">
-                Message
+                Message-字符串
+            </clu-button>
+            <clu-button @click="handelMessage0">
+                Message-对象
             </clu-button>
         </div>
         <div class="row">
@@ -122,6 +125,14 @@ export default {
         },
         handelMessage () {
             this.$message('这是一条消息提示')
+        },
+        handelMessage0 () {
+            this.$message({
+                msg: '我是对象的值',
+                onClose: () => {
+                    alert('用户的方法')
+                },
+            })
         },
     },
 }
