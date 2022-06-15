@@ -1,8 +1,10 @@
 <template>
-    <div v-if="visiable" @click="handleClose" class="clu-message-container" :style="positionStyle">
-        {{msg}}
-        <clu-icon type="guanbi"/>
-    </div>
+    <transition name="clu-message-fade">
+        <div v-if="visiable" @click="handleClose" class="clu-message-container" :style="positionStyle">
+            {{msg}}
+            <clu-icon type="guanbi"/>
+        </div>
+    </transition>
 </template>
 
 <script>
@@ -47,6 +49,11 @@ export default {
         padding: 5px 10px;
         border-radius: 4px;
         font-size: 14px;
+    }
+    .clu-message-fade-enter,
+    .clu-message-fade-leave {
+        opacity: 0;
+        transform: translate(-50%, -100%);
     }
 
 </style>
