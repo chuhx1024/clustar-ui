@@ -14,6 +14,7 @@ export default {
         return {
             visiable: false,
             verticalOffset: 20,
+            duration: 3000,
         }
     },
     computed: {
@@ -23,12 +24,22 @@ export default {
             }
         },
     },
+    mounted () {
+        this.startTimer()
+    },
     methods: {
         handleClose () {
             this.visiable = false
             // 用户传入的钩子函数 如果没有传入 就不执行了
             if (typeof this.onClose === 'function') {
                 this.onClose()
+            }
+        },
+        startTimer () {
+            if (this.duration > 0) {
+                this.timer = setTimeout(() => {
+                    this.handleClose()
+                }, this.duration)
             }
         },
     },
