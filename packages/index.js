@@ -13,6 +13,7 @@ import TestProps from './test-props/index.js'
 import Form from './form/index.js'
 import FormItem from './form-item/index.js'
 import Message from './message/index.js'
+import MessageBox from './message-box/index.js'
 
 const components = [
     Button,
@@ -36,6 +37,7 @@ const install = (Vue) => {
     })
 
     Vue.prototype.$message = Message
+    Vue.prototype.$messageBox = MessageBox
 }
 
 // if (typeof window !== 'undefined' && window.Vue) {
@@ -60,5 +62,6 @@ export default {
     Form,
     FormItem,
     Message,
+    MessageBox,
 
 }

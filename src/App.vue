@@ -1,6 +1,14 @@
 <template>
     <div id="app">
         <div class="row">
+            <clu-button @click="handelMessageBox">
+                MessageBox-字符串
+            </clu-button>
+            <clu-button @click="handelMessageBox0">
+                MessageBox-对象
+            </clu-button>
+        </div>
+        <div class="row">
             <clu-button @click="handelMessage">
                 Message-字符串
             </clu-button>
@@ -131,6 +139,21 @@ export default {
                 msg: '我是对象的值',
                 onClose: () => {
                     alert('用户的方法')
+                },
+            })
+        },
+        handelMessageBox () {
+            this.$messageBox('这是一条消息提示')
+        },
+        handelMessageBox0 () {
+            this.$messageBox({
+                msg: '用户标签',
+                body: '我是一段自定义内容',
+                onClose: () => {
+                    alert('用户的方法取消钩子')
+                },
+                onOk: () => {
+                    alert('用户的方法确定钩子')
                 },
             })
         },
